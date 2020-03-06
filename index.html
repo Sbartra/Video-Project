@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Gumer Video Project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+<style>
+body {font-family: "Lato", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.2;
+}
+.mySlides {display: none}
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("https://i.ibb.co/PYZLwGP/chazuta.jpg");
+  min-height: 100%;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+
+div.gallery img {
+  width: 100%;
+ 
+}
+* {
+  box-sizing: border-box;
+}
+.responsive {
+  padding: 0 0px;
+  float: left;
+  width: 24.99999%;
+}
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+p {
+  text-align: justify;
+}
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: blue;
+  }
+  .carousel-indicators li {
+    border-color: blue;
+  }
+  .carousel-indicators li.active {
+    background-color: blue;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+.row-dc {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+  
+.margin-bottom {
+    margin-bottom: 25px;
+}
+.text-bold {
+    font-weight: bold;
+}
+.text-medium {
+    font-size: 20px;
+    line-height: 20px;
+}
+.text-uppercase {
+    text-transform: uppercase;
+}
+.text-left {
+    text-align: left;
+}
+.cyan {
+    color: #0092dd;
+}
+  
+ .img-box-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+  
+ .w3-bar {
+   background-color: white;
+   
+  }
+  .w3-button {
+    background-color:transparent;
+  }
+  
+  .w3-container {
+    background-color: LightPink;
+  }
+ .w3-display-bottomleft {
+   color: #DDA0DD;
+  }
+  
+  .w3-content {
+    
+    background-color: white;
+  }
+  
+  .w3-col m6 {
+    
+     background-color: LightPink;
+  }
+  
+  .w3-container, w3-bottombar{
+    background-color: white;
+    
+  }
+
+
+  @media (pointer: coarse) and (hover: none) {
+        header {
+          background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+        }
+        header video {
+          display: none;
+        }
+      }   
+
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+    <div class="w3-bar w3-black w3-card" id="myNavbar">
+      <a href="#home" class="w3-bar-item w3-button w3-wide">LOGO</a>
+      <!-- Right-sided navbar links -->
+      <div class="w3-right w3-hide-small">
+        <a href="#contact" class="w3-bar-item w3-button"><i></i> How TV Works</a>
+        <a href="#contact" class="w3-bar-item w3-button"><i></i> What's On</a>
+        <a href="#contact" class="w3-bar-item w3-button"><i></i> My Account</a>
+      </div>
+      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+  
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+  
+  <!-- Sidebar on small screens when clicking the menu icon -->
+  <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+    
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">How TV Works</a>
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">What's On</a>
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">My Account</a>
+  </nav>
+  
+  <!-- Header with full-height image -->
+  <header class="bgimg-1 w3-display-container" id="home">
+    <div class="w3-display-middle w3-text-red" style="padding:48px">
+      <span class="w3-jumbo w3-hide-small">Unlimited films, TV programmes and more.</span><br>
+      <span class="w3-xxlarge w3-hide-large w3-hide-medium">Unlimited films, TV programmes and more.</span><br>
+      <span class="w3-large"><b>Watch anywhere. Cancel at any time.</b></span>
+      <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and subscribe today</a></p>
+    </div> 
+    <div class="w3-display-bottomleft w3-text-pink w3-xlarge" style="padding:24px 48px">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+  </header>
+  
+
+<!-- Container (Portfolio Section) -->
+<div class="w3-content w3-container w3-padding-64" id="portfolio">
+    <h3 class="w3-center">VIDEO PLAYER</h3>
+    <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.</em></p><br>
+  
+    <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+    <div class="w3-row-padding w3-center">
+      <div class="w3-col m3">
+          <iframe width="200" height="200" src="https://www.youtube.com/embed/p_ZrVkC_gNU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+  
+      <div class="w3-col m3">
+          <iframe width="200" height="200" src="https://www.youtube.com/embed/iuFDnMN6M5s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+  
+      <div class="w3-col m3">
+          <iframe width="200" height="200" src="https://www.youtube.com/embed/GXm6CTMV5aU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+  
+      <div class="w3-col m3">
+          <iframe width="200" height="200" src="https://www.youtube.com/embed/O7sIZM3o3jQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  
+    <div class="w3-row-padding w3-center w3-section">
+      <div class="w3-col m3">
+        <iframe width="200" height="200" src="https://www.youtube.com/embed/IOtwBrMrFSM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+  
+      <div class="w3-col m3">
+        <iframe width="200" height="200" src="https://www.youtube.com/embed/hEBhKY1XHho" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+  
+      <div class="w3-col m3">
+          <iframe width="200" height="200" src="https://www.youtube.com/embed/Lh_EWlsYB5U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+  
+      <div class="w3-col m3">
+          <iframe width="200" height="200" src="https://www.youtube.com/embed/4Uq6VbgM46U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
+    </div>
+  </div>
+  
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+    <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption" class="w3-opacity w3-large"></p>
+    </div>
+  </div>
+  
+<!-- Header with Slideshow -->
+<header class="w3-display-container w3-center">
+    <button class="w3-button w3-block w3-green w3-hide-large w3-hide-medium" onclick="document.getElementById('download').style.display='block'">Download <i class="fa fa-android"></i> <i class="fa fa-apple"></i> <i class="fa fa-windows"></i></button>
+    <div class="mySlides w3-animate-opacity">
+      <img class="w3-image" src="https://i.ibb.co/zSTPjhZ/riviera.jpg" alt="Image 1" style="min-width:500px" width="1500" height="1000">
+      <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
+        <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+          <h1 class="w3-xlarge">Watch Movies on the Go</h1>
+          <hr class="w3-opacity">
+          <p>Super simple installment: free of charge</p>
+          <p><button class="w3-button w3-block w3-green w3-round" onclick="document.getElementById('download').style.display='block'">Download <i class="fa fa-android"></i> <i class="fa fa-apple"></i> <i class="fa fa-windows"></i></button></p>
+        </div>
+      </div>
+    </div>
+    <div class="mySlides w3-animate-opacity">
+      <img class="w3-image" src="https://i.ibb.co/TKYCgHQ/Chazuta1.jpg" alt="Image 2" style="min-width:500px" width="1500" height="1000">
+      <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
+        <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+          <h1 class="w3-xlarge w3-text-red"><b>CLICK!</b> Fast and Easy</h1>
+          <hr class="w3-opacity">
+          <p>Choose from thousands of films</p>
+          <p><button class="w3-button w3-block w3-red w3-round" onclick="document.getElementById('download').style.display='block'">Download <i class="fa fa-android"></i> <i class="fa fa-apple"></i> <i class="fa fa-windows"></i></button></p>
+        </div>
+      </div>
+    </div>
+    <div class="mySlides w3-animate-opacity">
+      <img class="w3-image" src="https://i.ibb.co/51CFHM5/Cocoteros.jpg" alt="Image 3" style="min-width:500px" width="1500" height="1000">
+      <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
+        <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+          <h1 class="w3-xlarge">The best Films</h1>
+          <hr class="w3-opacity">
+          <p>Watch Films on the Go.</p>
+          <p><button class="w3-button w3-block w3-indigo w3-round" onclick="document.getElementById('download').style.display='block'">Live Streaming <i class="fa fa-android"></i> <i class="fa fa-apple"></i> <i class="fa fa-windows"></i></button></p>
+        </div>
+      </div>
+    </div>
+    <a class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hover-light-grey" onclick="plusDivs(1)">Live Streaming <i class="fa fa-angle-right"></i></a>
+    <a class="w3-button w3-block w3-black w3-hide-large w3-hide-medium" onclick="plusDivs(1)">Live Streaming <i class="fa fa-angle-right"></i></a>
+  </header>
+  
+
+
+
+
+ <!-- Promo Section - "We know design" -->
+<div class="w3-container w3-green w3-center" style="padding:128px 16px">
+    <div class="w3-row-padding">
+      <div class="w3-col m6">
+        <h3 class="w3-center w3-xxxlarge w3-text-purple"><b>Enjoy on your TV.</b></h3><br>
+        <p class="w3-center w3-large">Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.
+          </p>
+        
+      </div>
+      <div class="w3-col m6">
+          <iframe width="350" height="200" src="https://www.youtube.com/embed/VmtRxRc3vs0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+  
+ 
+
+ <!-- Clarity Section -->
+<div class="w3-padding-64 w3-light-grey">
+    <div class="w3-row-padding">
+      <div class="w3-col l4 m6">
+        <img class="w3-image w3-round-large w3-hide-small" src="https://i.ibb.co/KNtdm17/background-pictures-5.jpg" alt="App" width="450" height="471">
+      </div>
+      <div class="w3-col l8 m6">
+        <h1 class="w3-jumbo"><b>Clarity</b></h1>
+        <h1 class="w3-xxxlarge w3-text-red"><b>Pixels, who?</b></h1>
+        <p><span class="w3-xlarge">A revolution in resolution.</span> Sharp and clear photos with the world's best photo engine, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+ <!-- Features Section -->
+<div class="w3-container w3-padding-64 w3-dark-grey w3-center">
+    <h1 class="w3-jumbo"><b>Features</b></h1>
+    <p class="w3-center">This app is just so lorem ipsum.</p>
+  
+    <div class="w3-row" style="margin-top:64px">
+      <div class="w3-col s3">
+        <i class="fa fa-bolt w3-text-orange w3-jumbo"></i>
+        <p>Fast</p>
+      </div>
+      <div class="w3-col s3">
+        <i class="fa fa-heart w3-text-red w3-jumbo"></i>
+        <p>Loved</p>
+      </div>
+      <div class="w3-col s3">
+        <i class="fa fa-camera w3-text-yellow w3-jumbo"></i>
+        <p>Clarity</p>
+      </div>
+      <div class="w3-col s3">
+        <i class="fa fa-battery-full w3-text-green w3-jumbo"></i>
+        <p>Power</p>
+      </div>
+    </div>
+  
+    <div class="w3-row" style="margin-top:64px">
+      <div class="w3-col s3">
+        <i class="fa fa-diamond w3-text-white w3-jumbo"></i>
+        <p>Sharp</p>
+      </div>
+      <div class="w3-col s3">
+        <i class="fa fa-cloud w3-text-blue w3-jumbo"></i>
+        <p>Cloud</p>
+      </div>
+      <div class="w3-col s3">
+        <i class="fa fa-globe w3-text-amber w3-jumbo"></i>
+        <p>Global</p>
+      </div>
+      <div class="w3-col s3">
+        <i class="fa fa-hdd-o w3-text-cyan w3-jumbo"></i>
+        <p>Storage</p>
+      </div>
+    </div>
+    
+    <div class="w3-row" style="margin-top:64px">
+      <div class="w3-col s3">
+        <i class="fa fa-user w3-text-sand w3-jumbo"></i>
+        <p>Safe</p>
+      </div>
+      <div class="w3-col s3">
+        <i class="fa fa-shield w3-text-orange w3-jumbo"></i>
+        <p>Stabile</p>
+      </div>
+      <div class="w3-col s3">
+        <i class="fa fa-wifi w3-text-grey w3-jumbo"></i>
+        <p>Connected</p>
+      </div>
+      <div class="w3-col s3">
+        <i class="fa fa-image w3-text-pink w3-jumbo"></i>
+        <p>HD</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Pricing Section -->
+<div class="w3-container w3-center w3-blue-grey w3-padding-32">
+  <h3>FORMAS DE PAGO</h3>
+  <p class="w3-large w3-center"></p>
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-blue w3-xlarge w3-padding-32">PAGO ÚNICO</li>
+        
+          <h2 class="w3-wide">$ 10</h2>
+          <span class="w3-opacity"></span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick" />
+<input type="hidden" name="hosted_button_id" value="PFUPZD2CEMD9N" />
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+<img alt="" border="0" src="https://www.paypal.com/en_PE/i/scr/pixel.gif" width="1" height="1" />
+</form>
+
+        </li>
+      </ul>
+    </div>
+    <div class="w3-third">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-blue w3-xlarge w3-padding-48">PAGO MENSUAL</li>
+        
+          <h2 class="w3-wide">$ 25</h2>
+          <span class="w3-opacity"></span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick" />
+<input type="hidden" name="hosted_button_id" value="PFUPZD2CEMD9N" />
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+<img alt="" border="0" src="https://www.paypal.com/en_PE/i/scr/pixel.gif" width="1" height="1" />
+</form>
+
+
+        </li>
+      </ul>
+    </div>
+    <div class="w3-third w3-section">
+      <ul class="w3-ul w3-white w3-hover-shadow">
+        <li class="w3-blue w3-xlarge w3-padding-32">PAGO ANUAL</li>
+        
+          <h2 class="w3-wide">$ 50</h2>
+          <span class="w3-opacity"></span>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick" />
+<input type="hidden" name="hosted_button_id" value="PFUPZD2CEMD9N" />
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+<img alt="" border="0" src="https://www.paypal.com/en_PE/i/scr/pixel.gif" width="1" height="1" />
+</form>
+
+
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-white w3-padding-64" id="contact">
+    <br><br>
+  <p class="w3-xlarge w3-center w3-text-blue w3-padding-16"><b>CONTACTANOS</b></p>
+  
+    <p class="w3-center"><em>Para mayor informacion</em></p>
+  
+    <div class="w3-row w3-padding-32 w3-section">
+      <div class="w3-col m4 w3-container w3-white">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d499487.63540328026!2d-77.2679826171809!3d-12.026498668652646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima%2C%20Peru!5e0!3m2!1sen!2suk!4v1583530809721!5m2!1sen!2suk" width="300" height="360" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      </div>
+      <div class="w3-col m8 w3-panel">
+        <div class="w3-large w3-margin-bottom">
+          <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Lima, Perú<br>
+          <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Jr. Ciro Alegria <br>
+ 
+          <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +41 98765555<br>
+          <a class="w3-hover-text-purple" href="mailto:" style="text-decoration:none;"><i class="fa fa-envelope fa-fw w3-xlarge w3-margin-right"></i> Email: micorreo@micorreo.org<br></a>
+        </div>
+       
+        <form action="/action_page.php" target="_blank" method="POST" data-netlify="true">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Nombre" required name="Name">
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+            </div>
+          </div>
+          
+          <div class="w3-section">
+        <label>Donde estas?</label>
+        <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Subject" required>
+      </div>
+          <input class="w3-input w3-border" type="text" placeholder="Mensaje" required name="Message">
+          <button class="w3-button w3-blue-gray w3-right w3-section" type="submit">
+            <i class="fa fa-paper-plane"></i> ENVIAR MENSAJE
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+
+ <!-- Footer -->
+ <footer class="w3-container w3-padding-64 w3-blue-grey">
+  <div class="w3-row-padding">
+    <div class="w3-third w3-center">
+      <a href="#home"><img src="https://i.ibb.co/C8xQpqx/3-D-compass-logo.jpg class="w3-left w3-margin-right" style="width:100px"></a>
+      <div class="w3-xxlarge w3-section w3-wide">
+    <a href="https://www.facebook.com/aprodmayo/" title="Facebook"><i class="fa fa-facebook-official w3-text-white w3-hover-opacity"></i></a>
+    <a href="https://www.instagram.com/aprodmayo.mujer/" title="Instagram"><i class="fa fa-instagram w3-text-white w3-hover-opacity"></i></a>
+    <!--<i class="fa fa-youtube-play w3-hover-opacity"></i>-->
+    <a href="https://www.twitter.com/aprodmayo/"><i class="fa fa-twitter w3-text-white w3-hover-opacity"></i></a>
+     
+    <!--<i class="fa fa-linkedin w3-hover-opacity"></i>-->
+  </div>
+       <h6><a href="term.html" class="w3-text-white" style="text-decoration: none"><b>TERMINOS DE USO</b></a></h6>                               
+       <h6><a href="priv.html" class="w3-text-white" style="text-decoration: none"><b>POLITICA DE PRIVACIDAD</b></a></h6>                                     
+        <h6><b>HOSTING POR<a href="https://orioltech.netlify.com/" style="text-decoration: none" target="_blank" CLASS="w3-text-white"> ORIOLTECH</b></a></h6>
+    </div>
+  
+    <div class="w3-third w3-center">
+        <h3><b>PROGRAMACION</b></h3>
+      <p class="w3-center"><a href="albergue.html" class="w3-text-white" style="text-decoration:none">FAQ</a></p>
+      <p class="w3-center"><a href="potenciar.html" class="w3-text-white" style="text-decoration:none">Account</a></p>
+      <p class="w3-center"><a href="diseno.html" class="w3-text-white" style="text-decoration:none">Contact Us</a></p>
+      <p class="w3-center"><a href="propuesta.html" class="w3-text-white" style="text-decoration:none">Documentales</a></p>
+      <p class="w3-center"><a href="gestionar.html" class="w3-text-white" style="text-decoration:none">Programas</a></p>
+      <p class="w3-center"><a href="promover.html" class="w3-text-white" style="text-decoration:none">Amenidades</a></p>
+      
+      
+    </div>
+    <div class="w3-third w3-center">
+        <h3><b>MAS VIDEOS</b></h3>
+     <p class="w3-center">Accion</p>
+      <p class="w3-center">Ciencia Ficcion</p>
+      <p class="w3-center">Romance</p>
+      <p class="w3-center">Telenovelas</p>
+      <p class="w3-center">Fomentando la Cultura</p>
+      <p class="w3-center">Noticias</p>
+     
+    </div>
+  </div>
+  </footer>
+  <div class="w3-black w3-center w3-padding-32"> <i class="fa fa-copyright" aria-hidden="true"></i> <a class="w3-text-white" style="text-decoration:none" href="#home" target="_blank">2019 MY COMPANY</a>
+<br><br>
+<div class="w3-center">
+    <a href="#home" class="w3-button w3-round w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Inicio</a>
+  </div>      
+  </div>
+  <!-- End page content -->
+  </div>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+<script>
+  $(document).ready(function(){
+    // Add smooth scrolling to all links in navbar + footer link
+    $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+      // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+        // Prevent default anchor click behavior
+        event.preventDefault();
+  
+        // Store hash
+        var hash = this.hash;
+  
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 900, function(){
+     
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+        });
+      } // End if
+    });
+    
+    $(window).scroll(function() {
+      $(".slideanim").each(function(){
+        var pos = $(this).offset().top;
+  
+        var winTop = $(window).scrollTop();
+          if (pos < winTop + 600) {
+            $(this).addClass("slide");
+          }
+      });
+    });
+  })
+  </script>
+<script>
+    // Automatic Slideshow - change image every 4 seconds
+    var myIndex = 0;
+    carousel();
+    
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 4000);    
+    }
+    
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    var modal = document.getElementById('ticketModal');
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
+
+<script>
+    // Slideshow
+    var slideIndex = 1;
+    showDivs(slideIndex);
+    
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+    
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      x[slideIndex-1].style.display = "block";  
+    }
+    </script>
+
+<!--test 1-->
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content w3-card-4">
+    <header class="w3-container w3-center w3-blue"> 
+      <span onclick="document.getElementById('id01').style.display='none'" 
+      class="w3-button w3-display-topright">&times;</span>
+      <h2>RESPETO</h2>
+    </header>
+    <div class="w3-container w3-center">
+      <p>El respeto es uno de los valores morales más importantes del ser humano, pues
+es fundamental para lograr una armoniosa interacción social, con atención y
+consideración.</p>
+      
+      <p>El respeto también debe aprenderse, que respetar no significa estar de acuerdo
+en todos los ámbitos con otra persona, sino que se trata de no discriminar ni
+ofender a esa persona por su forma de vida y sus decisiones, siempre y cuando
+dichas decisiones no causen ningún daño, ni afecten o irrespeten a los demás.</p>
+    </div>
+    <footer class="w3-container w3-blue">
+      <p class="w3-center"></p>
+    </footer>
+  </div>
+</div>
+<!--test 2-->
+<div id="id02" class="w3-modal">
+  <div class="w3-modal-content w3-card-4">
+    <header class="w3-container w3-center w3-blue"> 
+      <span onclick="document.getElementById('id02').style.display='none'" 
+      class="w3-button w3-display-topright">&times;</span>
+      <h2>SOLIDARIDAD</h2>
+    </header>
+    <div class="w3-container">
+      <p>La solidaridad y la generosidad van ligados, es uno de los valores humanos por
+excelencia que se define como la colaboración mutua en las personas, es aquel
+sentimiento que mantiene a las personas unidas en todo momento,
+es significado de amor y  sinónimo de respaldo, ayuda, protección, que cuando
+persigue una causa justa cambia el mundo y lo hace mejor para todos.</p>
+      <p></p>
+    </div>
+    <footer class="w3-container w3-blue">
+      <p class="w3-center"></p>
+    </footer>
+  </div>
+</div>
+<!--test 3--> 
+ <div id="id03" class="w3-modal">
+  <div class="w3-modal-content w3-card-4">
+    <header class="w3-container w3-center w3-blue"> 
+      <span onclick="document.getElementById('id03').style.display='none'" 
+      class="w3-button w3-display-topright">&times;</span>
+      <h2>HONESTIDAD</h2>
+    </header>
+    <div class="w3-container">
+      <p>La honestidad es un valor moral positivo vinculado a la verdad y la
+transparencia del ser humano, una actitud que siembra confianza en uno
+mismo y en aquellos que están en contacto con la persona honesta. Hace que
+la persona actúe siempre con base en la verdad y en la auténtica justicia,
+dando a cada quien lo que le corresponde, incluida ella misma, respeta la vida,
+se caracteriza por la confianza, la sinceridad y la apertura, y expresa la
+disposición de vivir a la luz de la verdad.</p>
+      
+    </div>
+    <footer class="w3-container w3-blue">
+      <p class="w3-center"></p>
+    </footer>
+  </div>
+</div>
+<!--test 4-->  
+ <div id="id04" class="w3-modal">
+  <div class="w3-modal-content w3-card-4">
+    <header class="w3-container w3-center w3-blue"> 
+      <span onclick="document.getElementById('id04').style.display='none'" 
+      class="w3-button w3-display-topright">&times;</span>
+      <h2>AMOR</h2>
+    </header>
+    <div class="w3-container">
+      <p>El amor es el principio que crea y sustenta las relaciones humanas con
+dignidad y profundidad que nos empuja a velar por la felicidad de otro. El
+amor tiene el poder de unir, guiar y liberar a las personas. El amor es el
+catalizador para el cambio, el desarrollo y los logros que compone nuestra
+sociedad.</p>
+      
+    </div>
+    <footer class="w3-container w3-blue">
+      <p class="w3-center"></p>
+    </footer>
+  </div>
+</div>
+<!--test 5-->  
+ <div id="id05" class="w3-modal">
+  <div class="w3-modal-content w3-card-4">
+    <header class="w3-container w3-center w3-blue"> 
+      <span onclick="document.getElementById('id05').style.display='none'" 
+      class="w3-button w3-display-topright">&times;</span>
+      <h2>GRATITUD</h2>
+    </header>
+    <div class="w3-container">
+     <p>La gratitud se ejerce cuando una persona experimenta aprecio y conocimiento
+por otra que le prestó ayuda. No consiste, necesariamente, en “pagar” ese
+favor con otro igual, sino en mostrar afecto y guardar en la memoria ese acto
+de generosidad. Más que centrarse en la utilidad práctica del servicio recibido,
+pondera la actitud amable de quien lo hizo.</p>
+     
+    </div>
+    <footer class="w3-container w3-blue">
+      <p class="w3-center"></p>
+    </footer>
+  </div>
+</div>
+<!--test 6-->
+<div id="id06" class="w3-modal">
+  <div class="w3-modal-content w3-card-4">
+    <header class="w3-container w3-center w3-blue"> 
+      <span onclick="document.getElementById('id06').style.display='none'" 
+      class="w3-button w3-display-topright">&times;</span>
+      <h2>JUSTICIA</h2>
+    </header>
+    <div class="w3-container">
+      <p>La justicia es un valor importante porque busca el equilibrio entre el propio
+bien y el de la sociedad. La justicia da a cada ciudadano lo que le corresponde
+para suplir sus necesidades básicas para que pueda aportar a la sociedad. La
+justicia implica conjugar la libertad individual, la igualdad y la
+interdependencia de cada miembro de una comunidad.</p>
+      
+    </div>
+    <footer class="w3-container w3-blue">
+      <p class="w3-center"></p>
+    </footer>
+  </div>
+</div>
+<!--test 7-->
+<div id="id07" class="w3-modal">
+  <div class="w3-modal-content w3-card-4">
+    <header class="w3-container w3-center w3-blue"> 
+      <span onclick="document.getElementById('id07').style.display='none'" 
+      class="w3-button w3-display-topright">&times;</span>
+      <h2>TOLERANCIA</h2>
+    </header>
+    <div class="w3-container">
+     <p>La tolerancia es el valor que concede dignidad, libertad y diversidad en una
+sociedad, asumiendo que todos somos diferentes. La tolerancia significa que
+abrazamos opiniones, estilos de vida y creencias diferentes a las nuestras para
+relacionarnos como seres humanos.</p>
+      
+     
+    </div>
+    <footer class="w3-container w3-blue">
+      <p class="w3-center"></p>
+    </footer>
+  </div>
+</div>
+<!--test 8-->
+<div id="id08" class="w3-modal">
+  <div class="w3-modal-content w3-card-4">
+   <header class="w3-container w3-center w3-blue"> 
+      <span onclick="document.getElementById('id08').style.display='none'" 
+      class="w3-button w3-display-topright">&times;</span>
+      <h2>CONFIDENCIALIDAD</h2>
+    </header>
+    <div class="w3-container">
+     <p>Some text about groups...</p>
+     <p>Another text about the groups...</p>
+    </div>
+    <footer class="w3-container w3-blue">
+     <p class="w3-center"></p>
+    </footer>
+  </div>
+</div>
+</body>
+</html>
