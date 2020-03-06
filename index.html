@@ -40,59 +40,60 @@ body, html {
 </style>
 <body>
 
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  
-    <div class="w3-bar w3-card" id="myNavbar">
-     <a href="index.html" class="w3-bar-item w3-button w3-wide" style= "padding: 13px 16px;" >
-  <img src="https://i.ibb.co/zfmZBbP/IMG-20191115-WA0002.jpg" width="120" height="60" alt="logo">
-      </a>
-      <!-- Right-sided navbar links -->
-      <div class="w3-left w3-hide-small">
-       
-        <a href="#about" class="w3-bar-item w3-button" style="text-decoration: none">QUIENES SOMOS</a>
-        <a href="#team" class="w3-bar-item w3-button" style="text-decoration: none"><i class="fa fa-user"></i> NUESTRO EQUIPO</a>
-        <a href="#work" class="w3-bar-item w3-button" style="text-decoration: none"><i class="fa fa-th"></i> OBJETIVOS</a>
-        <a href="#pricing" class="w3-bar-item w3-button" style="text-decoration: none"><i class="fa fa-money"></i> DONACIONES</a>
-        <a href="#voluntario" class="w3-bar-item w3-button" style="text-decoration: none"><i class="fa fa-diamond"></i> VOLUNTARIADO</a>
-        <a href="#contact" class="w3-bar-item w3-button" style="text-decoration: none" ><i class="fa fa-envelope"></i> CONTACTANOS</a>
-        <a href="galeria.html" class="w3-bar-item w3-button" style="text-decoration: none" ><i class="fa fa-photo"></i> GALERIA</a>
-        <div class="w3-dropdown-hover">
-            <button class="w3-button" title="Notifications">IDIOMAS <i class="fa fa-users"></i></button>     
-            <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-              <a href="index.html" class="w3-bar-item w3-button" style="text-decoration: none">ESP</a>
-              <a href="eng.html" class="w3-bar-item w3-button" style="text-decoration: none">ENG</a>
-              <a href="fran.html" class="w3-bar-item w3-button" style="text-decoration: none">FRA</a>
-            </div>
-          </div>
-      </div>
-      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-  
-      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-        <i class="fa fa-bars"></i>
-      </a>
+<div class="w3-black w3-bar w3-card">
+  <a href="#" class="w3-bar-item w3-left w3-button" style="text-decoration: none">Home</a>
+  <div class="w3-right w3-hide-small">
+  <a href="about.html" class="w3-bar-item w3-button w3-hide-small" style="text-decoration: none">About</a>
+  <div class="w3-dropdown-hover">
+    <button class="w3-button w3-hide-small" style="text-decoration: none">Our Treatments</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a href="treatment.html" class="w3-bar-item w3-button">Dermal Fillers</a>
+      <a href="facial.html" class="w3-bar-item w3-button">Facial Rejuvenation</a>
+      <a href="peel.html" class="w3-bar-item w3-button">Mesotherapy & Peel</a>
+      <a href="vitamin.html" class="w3-bar-item w3-button">Intravenous Vitamins, Minerals & Amino Acids</a>
     </div>
   </div>
+  <a href="price.html" class="w3-bar-item w3-button w3-hide-small" style="text-decoration: none">Our Prices</a>
+  <div class="w3-dropdown-hover">
+    <button class="w3-button w3-hide-small" style="text-decoration: none">Explore More</button>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <a href="#" class="w3-bar-item w3-button">Gallery</a>
+      <a href="#" class="w3-bar-item w3-button">Videos</a>
+      <a href="#" class="w3-bar-item w3-button">Testimonials</a>
+    </div>
+  </div>
+  <a href="#contact" class="w3-bar-item w3-button w3-hide-small" style="text-decoration: none">Contact</a>
+  </div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-text-white w3-right w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
   
-  <!-- Sidebar on small screens when clicking the menu icon -->
-  <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Cerrar ×</a>
-    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button" style="text-decoration: none">QUIENES SOMOS</a>
-    <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button" style="text-decoration: none">NUESTRO EQUIPO</a>
-    <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button" style="text-decoration: none">OBJETIVOS</a>
-    <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button" style="text-decoration: none">DONACIONES</a>
-    <a href="#voluntario" onclick="w3_close()" class="w3-bar-item w3-button" style="text-decoration: none">VOLUNTARIADO</a>
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button" style="text-decoration: none">CONTACTANOS</a>
-     <a href="galeria.html" onclick="w3_close()" class="w3-bar-item w3-button" style="text-decoration: none">GALERIA</a>
-    <div class="w3-dropdown-hover">
-            <button class="w3-button" title="Notifications">IDIOMAS <i></i></button>     
-            <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-              <a href="index.html" class="w3-bar-item w3-button" style="text-decoration: none">ESP</a>
-              <a href="eng.html" class="w3-bar-item w3-button" style="text-decoration: none">ENG</a>
-             <a href="fran.html" class="w3-bar-item w3-button" style="text-decoration: none">FRA</a>
-            </div>
-          </div>
-  </nav>
+
+</div>
+
+<div id="demo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium">
+  <a href="#" class="w3-bar-item w3-button">About</a>
+  <div class="w3-dropdown-hover w3-black">
+    <button class="w3-button">Our Treatments</button>
+    <div class="w3-dropdown-content w3-black w3-bar-block w3-card-4">
+      <a href="#" class="w3-bar-item w3-button">Dermal Fillers</a>
+      <a href="#" class="w3-bar-item w3-button">Facial Rejuvenation</a>
+      <a href="#" class="w3-bar-item w3-button">Mesotherapy & Pee</a>
+      <a href="#" class="w3-bar-item w3-button">Intravenous Vitamins, Minerals & Amino Acids</a>
+    </div>
+  </div>
+  <a href="price.html" class="w3-bar-item w3-button">Our Prices</a>
+  <div class="w3-dropdown-hover w3-black">
+    <button class="w3-button">Explore More</button>
+    <div class="w3-dropdown-content w3-black w3-bar-block w3-card-4">
+      <a href="#" class="w3-bar-item w3-button">Gallery</a>
+      <a href="#" class="w3-bar-item w3-button">Videos</a>
+      <a href="#" class="w3-bar-item w3-button">Testimonials</a>
+    </div>
+  </div>
+  <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+  
+</div>
+
+
   
   <!-- Header with full-height image -->
   <header class="bgimg-1 w3-display-container" id="home">
